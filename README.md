@@ -22,12 +22,42 @@ Use NoSQL_setup_starter.ipynb for this section of the challenge.
 
 The magazine editors have some requested modifications for the database before you can perform any queries or analysis for them. Make the following changes to the establishments collection:
 1. An exciting new halal restaurant just opened in Greenwich, but hasn't been rated yet. The magazine has asked you to include it in your analysis. Add the following information to the database:
-  ![Screenshot 2025-01-13 at 19 57 17](https://github.com/user-attachments/assets/f5c70365-c07a-4062-8287-6017549bec6b)
 
-2. Find the BusinessTypeID for "Restaurant/Cafe/Canteen" and return only the BusinessTypeID and BusinessType fields.
-3. Update the new restaurant with the BusinessTypeID you found.
-4. The magazine is not interested in any establishments in Dover, so check how many documents contain the Dover Local Authority. Next, remove any establishments within the Dover Local Authority from the database, and check the number of documents to ensure they were deleted.
-5. Some of the number values are stored as strings, when they should be stored as numbers.
+   ```
+   {
+       "BusinessName":"Penang Flavours",
+       "BusinessType":"Restaurant/Cafe/Canteen",
+       "BusinessTypeID":"",
+       "AddressLine1":"Penang Flavours",
+       "AddressLine2":"146A Plumstead Rd",
+       "AddressLine3":"London",
+       "AddressLine4":"",
+       "PostCode":"SE18 7DY",
+       "Phone":"",
+       "LocalAuthorityCode":"511",
+       "LocalAuthorityName":"Greenwich",
+       "LocalAuthorityWebSite":"http://www.royalgreenwich.gov.uk",
+       "LocalAuthorityEmailAddress":"health@royalgreenwich.gov.uk",
+       "scores":{
+           "Hygiene":"",
+           "Structural":"",
+           "ConfidenceInManagement":""
+       },
+       "SchemeType":"FHRS",
+       "geocode":{
+           "longitude":"0.08384000",
+           "latitude":"51.49014200"
+       },
+       "RightToReply":"",
+       "Distance":4623.9723280747176,
+       "NewRatingPending":True
+   }
+   ```
+
+3. Find the BusinessTypeID for "Restaurant/Cafe/Canteen" and return only the BusinessTypeID and BusinessType fields.
+4. Update the new restaurant with the BusinessTypeID you found.
+5. The magazine is not interested in any establishments in Dover, so check how many documents contain the Dover Local Authority. Next, remove any establishments within the Dover Local Authority from the database, and check the number of documents to ensure they were deleted.
+6. Some of the number values are stored as strings, when they should be stored as numbers.
     * Use update_many to convert latitude and longitude to decimal numbers.
     * Use update_many to convert RatingValue to integer numbers.
 
