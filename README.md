@@ -6,7 +6,8 @@ The UK Food Standards Agency evaluates various establishments across the United 
 
 ### Part 1: Database and Jupyter Notebook Setup
 
-Use NoSQL_setup_starter.ipynb for this section of the challenge.
+Use code file NoSQL_setup.ipynb for this section of the challenge.
+
 1. Import the data provided in the establishments.json file from your Terminal. Name the database uk_food and the collection establishments. Copy the text you used to import your data from your Terminal to a markdown cell in your notebook.
 2. Within your notebook, import the libraries you need: PyMongo and Pretty Print (pprint).
 3. Create an instance of the Mongo Client.
@@ -16,9 +17,14 @@ Use NoSQL_setup_starter.ipynb for this section of the challenge.
     * Find and display one document in the establishments collection using find_one and display with pprint.
 5. Assign the establishments collection to a variable to prepare the collection for use.
 
+
+_Part 1 Code and Output Screenshots_
+![Screenshot 2025-01-19 at 21 56 39](https://github.com/user-attachments/assets/55422d3e-a703-4250-9c67-a6d3da4a763b)
+
+
 ### Part 2: Update the Database
 
-Use NoSQL_setup_starter.ipynb for this section of the challenge.
+Use code file NoSQL_setup.ipynb for this section of the challenge.
 
 The magazine editors have some requested modifications for the database before you can perform any queries or analysis for them. Make the following changes to the establishments collection:
 1. An exciting new halal restaurant just opened in Greenwich, but hasn't been rated yet. The magazine has asked you to include it in your analysis. Add the following information to the database:
@@ -61,16 +67,23 @@ The magazine editors have some requested modifications for the database before y
     * Use update_many to convert latitude and longitude to decimal numbers.
     * Use update_many to convert RatingValue to integer numbers.
 
+_Part 2 Code and Output Screenshots_
+![Screenshot 2025-01-19 at 21 57 35](https://github.com/user-attachments/assets/69c4b2fd-9b8a-45d5-bd0c-9e4e9fbf720c)
+![Screenshot 2025-01-19 at 21 57 54](https://github.com/user-attachments/assets/5815fc7b-8b0d-451f-a667-e804fc46eff5)
+![Screenshot 2025-01-19 at 21 58 09](https://github.com/user-attachments/assets/77eff687-e5f1-42a2-b02d-272427e1202d)
+![Screenshot 2025-01-19 at 21 58 34](https://github.com/user-attachments/assets/4b2d72c8-27fa-4691-b7ba-bcbbddb0ff0c)
+![Screenshot 2025-01-19 at 21 58 51](https://github.com/user-attachments/assets/11336a22-d0a2-4dff-a669-c00aef2d7a9d)
+
+
 ### Part 3: Exploratory Analysis
 
 _Eat Safe, Love_ has specific questions they want you to answer, which will help them find the locations they wish to visit and avoid.
 
-Use NoSQL_analysis_starter.ipynb for this section of the challenge.
+Use code file NoSQL_analysis.ipynb for this section of the challenge.
 
-Some notes to be aware of while you are exploring the dataset:
-* RatingValue refers to the overall rating decided by the Food Authority and ranges from 1-5. The higher the value, the better the rating.
-  * Note: This field also includes non-numeric values such as 'Pass', where 'Pass' means that the establishment passed their inspection but isn't given a number rating. We will coerce non-numeric values to nulls during the database setup before converting ratings to integers.
-* The scores for Hygiene, Structural, and ConfidenceInManagement work in reverse. Thus, the higher the value, the worse the establishment is in these areas.
+Note:
+* RatingValue refers to the overall rating decided by the Food Authority and ranges from 1-5. The higher the value, the better the rating. (This field also includes non-numeric values such as 'Pass', where 'Pass' means that the establishment passed their inspection but isn't given a number rating. We coerce non-numeric values to nulls during the database setup before converting ratings to integers.)
+* The scores for Hygiene, Structural, and ConfidenceInManagement work in reverse: the higher the value, the worse the establishment is in these areas.
 
 Use the following questions to explore the database, and find the answers, so you can provide them to the magazine editors.
 
@@ -88,6 +101,14 @@ Unless otherwise stated, for each question:
   Hint: Use the aggregation method.
   The first 5 rows of the resulting DataFrame should look something like this:
   ![Screenshot 2025-01-13 at 19 33 30](https://github.com/user-attachments/assets/ac5e6099-3a56-4815-a538-83a7daeddebb)
+
+_Part 3 Code and Output Screenshots - Analyses only, screenshots truncate outputs for brevity_
+![Screenshot 2025-01-19 at 22 06 37](https://github.com/user-attachments/assets/af330139-c4ed-4d35-b4a9-79150e58b44f)
+![Screenshot 2025-01-19 at 22 06 56](https://github.com/user-attachments/assets/72ac7312-3e35-40b2-8d27-0f4a28e1001c)
+![Screenshot 2025-01-19 at 22 07 48](https://github.com/user-attachments/assets/23e48e27-400b-482d-91a8-2b0675e38813)
+![Screenshot 2025-01-19 at 22 08 15](https://github.com/user-attachments/assets/e6e8e176-77da-4b8a-b5d1-060e357a9549)
+![Screenshot 2025-01-19 at 22 08 26](https://github.com/user-attachments/assets/94ad313f-d42c-4c4a-a2b8-b1e892fa8b15)
+
 
 ## Acknowledgements
 
